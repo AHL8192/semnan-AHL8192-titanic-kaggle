@@ -1,40 +1,86 @@
+<div align="center">
+  <h1>🚢 Titanic Survival Prediction 🌊</h1>
+  <h3>Machine Learning Final Project - Semnan University</h3>
+  <p><i>پروژه نهایی درس یادگیری ماشین - دانشگاه سمنان</i></p>
+</div>
 
-# Titanic rescue prediction using Decision Tree, SVM, Logistic Regression, Random Forest and KNN
+---
 
-The objective of  Kaggle's Titanic Challenge was to build a classification model that could successfully predict the survival or the death  of a given passenger based on a set of variables. The purpose of this repository is to document the process I went through to create a Titanic rescue prediction using Decision Tree, SVM, Logistic Regression, Random Forest and KNN. 
- 
-### Quick Start: 
+## 🇬🇧 English Documentation
 
-[Check out](https://nbviewer.jupyter.org/github/alicevillar/titanic-kaggle/blob/main/Titanic_DecisionTree.ipynb
-) a static version of the notebook with Jupyter NBViewer from the comfort of your web browser.
+### 📌 About the Project
 
-### Dependencies:  
- 
-* [Numpy](https://numpy.org/)
-* [Pandas](https://pandas.pydata.org/)
-* [SciKit-Learn](https://scikit-learn.org/)
-* [Matplotlib](https://matplotlib.org/)
-* [Seaborn](https://seaborn.pydata.org/)
+This repository contains the complete workflow of a Machine Learning project from scratch, developed as the final project for the Machine Learning course at Semnan University's Faculty of Electrical and Computer Engineering.
+The goal is to predict the survival of passengers on the Titanic using classification algorithms.
 
-### Approach 
+### 📊 Dataset
 
-* PART 1: Data Handling -> Importing Data with Pandas, cleaning data, data description.
-* PART 2: Data Analysis -> Supervised ML Techniques: Decision Tree, SVM, Logistic Regression, Random Forest and KNN
-* PART 3: Valuation of the Analysis -> Performance measurement + K-folds cross validation to evaluate results locally + Accuracy comparison graph
+- **Name:** Titanic Dataset
+- **Size:** 891 rows, 12 columns
+- **Target Variable:** `Survived` (Binary: 0 = Died, 1 = Survived)
 
-### Kaggle Competition | Titanic Machine Learning from Disaster
+### 🛠️ Project Workflow
 
-Kaggle's challenge provides information about a subset of the Titanic population and asks a predictive model that tells whether or not a given passenger survived. 
-We are given basic explanatory variables, including passenger gender, age, passenger class, among others. More details about the competition can be found on Kaggle's [Competition Page](https://www.kaggle.com/c/titanic):
+1. **Exploratory Data Analysis (EDA):**
+  - Analyzed feature distributions using Histograms, KDE, and Boxplots.
+  - Checked for normality using QQ Plots and applied Log Transformation to heavily skewed features like `Fare`.
+  - Visualized feature correlations using a Correlation Heatmap.
+2. **Data Preprocessing:**
+  - Handled missing values (Median for `Age`, Mode for `Embarked`, dropped `Cabin`).
+  - Encoded categorical variables (`Sex`, `Embarked`).
+  - Split data into Training (80%) and Testing (20%) sets using `random_state=42`.
+3. **Modeling:**
+  - Algorithm: **Decision Tree Classifier**
+  - Hyperparameters: `max_depth=5` (chosen to control tree depth and prevent severe overfitting).
+4. **Evaluation:**
+  - Plotted the Confusion Matrix using Seaborn heatmaps.
+  - Calculated Accuracy, Precision, Recall, and F1-Score.
+  - *Note on Recall:* In this specific context, prioritizing Recall ensures we minimize False Negatives (missing actual survivors), which is critical for imbalanced survival datasets.
 
-The sinking of the RMS Titanic is one of the most infamous shipwrecks in history. On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships. One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class. In this contest, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy. This Kaggle Getting Started Competition provides an ideal starting place for people who may not have a lot of experience in data science and machine learning."
+### 📈 Results & Future Improvements
 
+- The model achieved ~86% training accuracy and ~78% testing accuracy, showing a reasonably controlled level of overfitting.
+- **Future suggestions:** Engineering new features like "Family Size" (combining `SibSp` and `Parch`) and applying class weights (`class_weight='balanced'`) to effectively handle class imbalance.
 
-### Results
+---
 
-In this repository I documented the process to create a Titanic rescue prediction using Decision Tree, SVM, Logistic Regression, Random Forest and KNN.  To all these modeles I did a Valuation Analisis (Performance Measurement and K-Fold). I have found the accuracy score with Random forest (0.8435754189944135) and Decision Tree (0.8212290502793296).Finally, I created a graph to compare the accuracy of the different models.   
- 
+## 🇮🇷 مستندات فارسی (Farsi Documentation)
 
-![print](accuracy_graph_titanic.png)
+### 📌 درباره پروژه
 
+این مخزن شامل پیاده‌سازی کامل یک پروژه یادگیری ماشین از صفر تا صد است که به عنوان پروژه نهایی درس یادگیری ماشین در دانشکده مهندسی برق و کامپیوتر **دانشگاه سمنان** انجام شده است.
+هدف این پروژه، پیش‌بینی بقای مسافران کشتی تایتانیک با استفاده از الگوریتم‌های طبقه‌بندی است.
 
+### 📊 مجموعه داده (Dataset)
+
+- **نام:** مجموعه داده تایتانیک (Titanic)
+- **اندازه:** ۸۹۱ سطر و ۱۲ ویژگی (ستون)
+- **متغیر هدف:** `Survived` (دو کلاسه: ۰ = جان‌باخته، ۱ = نجات‌یافته)
+
+### 🛠️ مراحل انجام پروژه
+
+۱. **تحلیل اکتشافی داده‌ها (EDA):**
+
+- بررسی توزیع ویژگی‌های عددی با استفاده از هیستوگرام، KDE و Boxplot.
+- بررسی نرمال بودن توزیع داده‌ها با QQ Plot و اعمال تبدیل لگاریتمی برای رفع چولگی (مثلاً در ستون `Fare`).
+- بررسی همبستگی ویژگی‌ها با رسم ماتریس همبستگی (Heatmap).
+  ۲. **پیش‌پردازش داده‌ها:**
+- مدیریت مقادیر گمشده (استفاده از میانه برای `Age`، مد برای `Embarked` و حذف ستون `Cabin`).
+- کدگذاری متغیرهای دسته‌ای (مانند جنسیت و بندر سوار شدن).
+- تقسیم داده‌ها به دو بخش آموزش (۸۰٪) و آزمون (۲۰٪).
+  ۳. **مدل‌سازی:**
+- الگوریتم انتخابی: **درخت تصمیم (Decision Tree)**
+- پارامترها: تنظیم `max_depth=5` برای کنترل عمق درخت و جلوگیری از بیش‌برازش (Overfitting).
+  ۴. **ارزیابی مدل:**
+- رسم ماتریس درهم‌ریختگی (Confusion Matrix).
+- محاسبه معیارهای Accuracy, Precision, Recall و F1-Score.
+- *اهمیت Recall:* در این مسئله، تمرکز بر روی Recall به ما کمک می‌کند تا خطای نوع دوم (عدم تشخیص مسافرانی که واقعاً نجات یافته‌اند) را به حداقل برسانیم.
+
+### 📈 نتایج و پیشنهادات بهبود
+
+- دقت مدل روی داده‌های آموزشی حدود ۸۶٪ و روی داده‌های آزمون حدود ۷۸٪ بود که نشان می‌دهد میزان بیش‌برازش با تنظیم عمق درخت به خوبی کنترل شده است.
+- **پیشنهادات برای آینده:** استخراج ویژگی‌های جدید مانند "اندازه خانواده" (از ترکیب `SibSp` و `Parch`) و همچنین استفاده از وزن‌دهی کلاس‌ها (`class_weight='balanced'`) برای مدیریت بهتر نامتوازن بودن داده‌ها.
+
+---
+
+*Developed by Ahmadreza Alipouryan*
