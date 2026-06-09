@@ -81,6 +81,10 @@ The goal is to predict the survival of passengers on the Titanic using classific
 - دقت مدل روی داده‌های آموزشی حدود ۸۶٪ و روی داده‌های آزمون حدود ۷۸٪ بود که نشان می‌دهد میزان بیش‌برازش با تنظیم عمق درخت به خوبی کنترل شده است.
 - **پیشنهادات برای آینده:** استخراج ویژگی‌های جدید مانند "اندازه خانواده" (از ترکیب `SibSp` و `Parch`) و همچنین استفاده از وزن‌دهی کلاس‌ها (`class_weight='balanced'`) برای مدیریت بهتر نامتوازن بودن داده‌ها.
 
+
+![Roadmap](./Roadmap.png)
+
+
 ---
 
 *Developed by Ahmadreza Alipouryan*
